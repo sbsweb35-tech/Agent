@@ -28,7 +28,7 @@
         /* 슬라이드 컨테이너 전환 효과 */
         #slider-container {
             display: flex;
-            width: 2400vw; /* 24개 슬라이드 * 100vw */
+            width: 3000vw; /* 30개 슬라이드 * 100vw */
             height: 100vh;
             transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
@@ -111,7 +111,7 @@
 
     <!-- 글로벌 프로그레스 바 -->
     <div class="fixed top-0 left-0 w-full h-2 bg-gray-200 z-50">
-        <div id="progress-bar" class="h-full bg-black transition-all duration-300 w-[4.17%]"></div>
+        <div id="progress-bar" class="h-full bg-black transition-all duration-300 w-[3.33%]"></div>
     </div>
 
     <!-- 슬라이드 전체 래퍼 -->
@@ -846,44 +846,93 @@
             </div>
         </section>
 
-        <!-- Slide 20: Part 3. 6 단일 에이전트 한계 극복 -->
+        <!-- Slide 20: Part 3. 6-1 만물상 에이전트의 한계 -->
         <section class="slide">
             <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
-                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 3. AI 에이전트 구조 설계 방법 > 6. 단일 에이전트 한계 극복</div>
+                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 3. AI 에이전트 구조 설계 방법 > 6-1. 만물상 에이전트의 한계</div>
                 
-                <h2 class="text-3xl md:text-4xl font-bold mb-8">6. 단일 에이전트의 한계 극복: 다중 에이전트 패턴</h2>
-                <p class="text-lg mb-8">업무 복잡도가 증가함에 따라 여러 전문화된 에이전트들이 상호작용하는 아키텍처가 필수적입니다.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">만물상(Jack-of-all-trades) 에이전트의 한계</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8 flex-1 items-center">
+                    <div class="w-full md:w-1/2 border-4 border-black p-8 bg-gray-50 flex flex-col relative shadow-[8px_8px_0px_0px_#000]">
+                        <div class="absolute -top-4 -left-4 bg-red-600 text-white border-2 border-black px-3 py-1 font-bold">한계점</div>
+                        <h3 class="text-2xl font-black mb-4">단일 에이전트 과부하</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">기획부터 디자인, 프론트엔드, 백엔드 설계, QA, 배포까지 한 명에게 몽땅 다 맡기면 어떻게 될까요?</p>
+                        <ul class="mt-4 space-y-2 font-bold text-gray-800 text-lg">
+                            <li class="flex items-center gap-2"><span class="text-red-600">⚠️</span> 컨텍스트 이탈 (맥락 상실)</li>
+                            <li class="flex items-center gap-2"><span class="text-red-600">⚠️</span> 제한된 도구의 한계</li>
+                            <li class="flex items-center gap-2"><span class="text-red-600">⚠️</span> 결국 엉뚱한 결과물 도출</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="hidden md:flex font-black text-4xl text-gray-400">→</div>
+                    
+                    <div class="w-full md:w-1/2 border-4 border-black p-8 bg-white flex flex-col relative shadow-[8px_8px_0px_0px_#000]">
+                        <div class="absolute -top-4 -left-4 bg-black text-white border-2 border-black px-3 py-1 font-bold">해결책</div>
+                        <h3 class="text-2xl font-black mb-4">다중 에이전트 (Multi-agent)</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">각자의 역할, 도구, 프롬프트가 명확히 분리된 여러 명의 <strong>'전문가 에이전트 팀'</strong>으로 아키텍처를 확장해야 합니다.</p>
+                        <div class="mt-6 flex justify-center gap-2 flex-wrap">
+                            <div class="border-2 border-black p-2 bg-yellow-200 font-bold text-sm">기획 에이전트</div>
+                            <div class="border-2 border-black p-2 bg-blue-200 font-bold text-sm">코딩 에이전트</div>
+                            <div class="border-2 border-black p-2 bg-green-200 font-bold text-sm">QA 에이전트</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 21: Part 3. 6-2 3대 다중 에이전트 패턴 -->
+        <section class="slide">
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
+                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 3. AI 에이전트 구조 설계 방법 > 6-2. 3대 다중 에이전트 설계 패턴</div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">실무에 적용되는 3대 다중 에이전트 설계 패턴</h2>
+                <p class="text-lg mb-8 font-medium text-gray-700">전문가 에이전트들을 어떤 대형으로 배치해서 일을 시켜야 할까요? 실무 핵심 패턴 3가지입니다.</p>
                 
                 <div class="flex-1 grid grid-rows-3 gap-4">
+                    <!-- 순차 패턴 -->
                     <div class="border-2 border-black p-4 flex items-center bg-gray-50">
                         <div class="w-1/4 font-bold text-lg border-r-2 border-black mr-6">순차 패턴<br>(Sequential)</div>
-                        <div class="flex items-center text-sm">
-                            <div class="agent-box">데이터 수집 에이전트</div>
-                            <div class="arrow-right"></div>
-                            <div class="agent-box">분석 에이전트</div>
-                            <div class="arrow-right"></div>
-                            <div class="agent-box bg-black text-white">결과 (예측 가능성↑)</div>
+                        <div class="flex flex-col gap-2 w-3/4">
+                            <p class="text-gray-700">공장의 조립 라인처럼 하나의 에이전트가 결과를 넘기면 다음 에이전트가 처리하는 선형적 방식. 높은 신뢰성과 예측 가능성 보장.</p>
+                            <div class="flex items-center text-sm mt-2">
+                                <div class="agent-box">기획 분석</div>
+                                <div class="arrow-right"></div>
+                                <div class="agent-box">코드 작성</div>
+                                <div class="arrow-right"></div>
+                                <div class="agent-box bg-black text-white">테스트</div>
+                            </div>
                         </div>
                     </div>
                     
+                    <!-- 병렬 패턴 -->
                     <div class="border-2 border-black p-4 flex items-center">
                         <div class="w-1/4 font-bold text-lg border-r-2 border-black mr-6">병렬 패턴<br>(Parallel)</div>
-                        <div class="flex flex-col gap-2 w-1/3">
-                            <div class="agent-box text-xs">기능 A 에이전트</div>
-                            <div class="agent-box text-xs">기능 B 에이전트</div>
+                        <div class="flex flex-col gap-2 w-3/4">
+                            <p class="text-gray-700">지연 속도(Latency)를 극적으로 단축하기 위해 여러 에이전트가 동시에 각자의 작업을 수행한 뒤 하나로 합치는 방식.</p>
+                            <div class="flex items-center text-sm mt-2">
+                                <div class="flex flex-col gap-2">
+                                    <div class="agent-box text-xs">웹 검색</div>
+                                    <div class="agent-box text-xs">문서 분석</div>
+                                </div>
+                                <div class="arrow-right ml-4"></div>
+                                <div class="agent-box bg-black text-white">결과 취합</div>
+                            </div>
                         </div>
-                        <div class="arrow-right ml-4"></div>
-                        <div class="agent-box bg-black text-white">취합 (처리 지연 속도 단축)</div>
                     </div>
                     
+                    <!-- 오케스트레이터 패턴 -->
                     <div class="border-2 border-black p-4 flex items-center bg-gray-50">
                         <div class="w-1/4 font-bold text-lg border-r-2 border-black mr-6">오케스트레이터<br>(Orchestrator)</div>
-                        <div class="flex items-center w-full">
-                            <div class="agent-box border-4 border-black">지휘자 에이전트</div>
-                            <div class="mx-6 font-bold text-2xl">►</div>
-                            <div class="flex flex-col gap-2">
-                                <div class="agent-box text-xs border-dashed">작업자 1 (업무 할당)</div>
-                                <div class="agent-box text-xs border-dashed">작업자 2 (업무 할당)</div>
+                        <div class="flex flex-col gap-2 w-3/4">
+                            <p class="text-gray-700">중앙의 똑똑한 매니저(지휘자) 에이전트가 직접 실무를 하지 않고, 하위 워커 에이전트들에게 작업을 할당하고 취합 관리.</p>
+                            <div class="flex items-center w-full mt-2 text-sm">
+                                <div class="agent-box border-4 border-black">매니저 에이전트</div>
+                                <div class="mx-4 font-bold text-lg">►</div>
+                                <div class="flex flex-col gap-2">
+                                    <div class="agent-box text-xs border-dashed">프론트엔드 워커</div>
+                                    <div class="agent-box text-xs border-dashed">백엔드 DB 워커</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -891,37 +940,210 @@
             </div>
         </section>
 
-        <!-- Slide 21: Part 3. 7 12-팩터 설계 원칙 -->
+        <!-- Slide 22: Part 3. 6-3 마케팅의 환상과 분산 시스템의 붕괴 -->
         <section class="slide">
             <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
-                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 3. AI 에이전트 구조 설계 방법 > 7. 12-팩터 설계 원칙</div>
+                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 3. AI 에이전트 구조 설계 방법 > 6-3. 마케팅의 환상과 분산 시스템의 붕괴</div>
                 
-                <h2 class="text-3xl md:text-4xl font-bold mb-8">7. 대규모 에이전트 스케일링의 함정과 12-팩터 설계 원칙</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">오케스트레이션의 재앙과 벤더 마케팅의 환상</h2>
                 
-                <div class="bg-black text-white p-6 mb-8 text-xl border-l-8 border-gray-400">
-                    "에이전트가 5개만 넘어가도 핸드오프가 실패하고 상태 데이터가 부패하는 현상이 발생합니다."
-                </div>
-                
-                <p class="text-xl mb-6">다수의 에이전트를 연결하는 것은 본질적으로 <span class="font-bold underline">분산 시스템 공학</span>의 문제입니다. 이를 극복하기 위해 클라우드 네이티브 아키텍처의 <strong>'12-Factor App'</strong> 원칙을 차용해야 합니다.</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
-                    <div class="border-t-4 border-black pt-4">
-                        <h3 class="text-2xl font-black mb-4">01. 실행 환경 격리</h3>
-                        <p class="text-gray-700">각 워커 에이전트의 실행 환경을 완전히 격리하고 엄격하게 정의된 데이터 계약 구조를 구축합니다.</p>
+                <div class="flex flex-col gap-6 flex-1 justify-center">
+                    <div class="border-l-8 border-red-600 bg-red-50 p-6 relative shadow-[4px_4px_0px_0px_#000]">
+                        <div class="absolute -top-4 -right-4 text-7xl opacity-20">💬</div>
+                        <p class="text-xl font-bold text-red-800 mb-2">Databricks 수석 엔지니어의 경고</p>
+                        <p class="text-2xl font-black text-black">"AI 에이전트 한 개는 기능(Feature)에 불과하지만,<br>에이전트 50개는 아무도 논의하지 않고 있는 <span class="bg-red-200 px-2 underline decoration-red-500">분산 시스템(Distributed Systems) 공학</span>의 문제다."</p>
                     </div>
-                    <div class="border-t-4 border-black pt-4">
-                        <h3 class="text-2xl font-black mb-4">02. 상태 정보 분리</h3>
-                        <p class="text-gray-700">에이전트 내부에 상태 정보를 저장하지 않고 외부 데이터베이스로 완전히 분리하여 시스템 붕괴를 막습니다.</p>
-                    </div>
-                    <div class="border-t-4 border-black pt-4">
-                        <h3 class="text-2xl font-black mb-4">03. 수직적 계층화</h3>
-                        <p class="text-gray-700">격리된 실행 환경과 데이터 정보를 기반으로 안정적인 에이전트 오퍼레이션을 수행합니다.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                        <div class="border-2 border-black p-6 bg-white shadow-[6px_6px_0px_0px_#000]">
+                            <h3 class="text-xl font-bold mb-3 border-b-2 border-black pb-2">마케팅의 환상 (Myth)</h3>
+                            <p class="text-gray-700 font-medium leading-relaxed mb-2">여러 에이전트들이 단톡방에 모여 수다를 떨며 동적으로 문맥을 공유하고 협업할 것이다.</p>
+                            <p class="font-bold text-red-600 text-sm">▶ 토큰 비용만 기하급수적 낭비, 스케일링 불가</p>
+                        </div>
+                        
+                        <div class="border-2 border-black p-6 bg-black text-white shadow-[6px_6px_0px_0px_#aaa]">
+                            <h3 class="text-xl font-bold mb-3 border-b-2 border-white pb-2 text-yellow-300">프로덕션 안티패턴 (현실)</h3>
+                            <ul class="list-disc pl-5 space-y-2 font-medium text-gray-200">
+                                <li>에이전트 간 핸드오프(Handoff) 조용히 실패</li>
+                                <li>참조하던 데이터의 부패</li>
+                                <li>의사결정 경로 추적 절대 불가</li>
+                            </ul>
+                            <p class="mt-3 text-red-400 font-bold text-sm">※ 가트너: 무분별한 AI 프로젝트 40%, 2027년 내 취소 경고</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 22: Part 4. 8 무한한 확장의 열쇠 -->
+        <!-- Slide 23: Part 3. 6-4 12-팩터 앱 원칙과 다음 세션 예고 -->
+        <section class="slide">
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col justify-center text-center relative">
+                <div class="absolute top-12 left-12 text-sm font-bold border-b-2 border-black pb-2 text-left">Part 3. AI 에이전트 구조 설계 방법 > 6-4. 12-팩터 앱 원칙과 다음 세션 예고</div>
+                
+                <div class="border-8 border-black p-10 bg-white relative mt-8 mx-auto max-w-4xl">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-black text-white px-6 py-2 text-xl font-bold uppercase tracking-widest">
+                        Solution & Next
+                    </div>
+                    
+                    <h2 class="text-3xl md:text-4xl font-black leading-tight mb-6 mt-4">
+                        클라우드 네이티브의 지혜:<br><span class="bg-black text-white px-4 inline-block mt-2 pb-1">12-팩터 앱(12-Factor App) 원칙 적용</span>
+                    </h2>
+                    
+                    <p class="text-lg font-medium leading-relaxed mb-6 text-gray-800 text-left px-8">
+                        <span class="text-red-600 font-bold border-b-2 border-red-600">가트너 예측:</span> "잘못된 아키텍처로 구축된 AI 프로젝트 40%는 2027년 내 실효성을 잃고 취소될 것"<br><br>
+                        <strong class="text-xl text-black">생존을 위한 아키텍처 원칙 (MSA/K8s의 교훈):</strong><br>
+                        1. 하위 워커 에이전트의 실행 환경 <strong class="bg-yellow-200 px-1 text-black">철저히 격리 (Isolated)</strong><br>
+                        2. 상태 정보는 뇌가 아닌 외부 DB로 <strong class="bg-yellow-200 px-1 text-black">완전 이관 (Externalized state)</strong><br>
+                        3. 수직적이고 엄격한 오케스트레이션 지휘 구조 확립
+                    </p>
+                    
+                    <div class="border-t-4 border-black pt-6 bg-gray-50 -mx-10 -mb-10 p-8">
+                        <p class="text-xl font-bold text-black mb-4">
+                            이렇게 훈련된 에이전트들을 실제 인프라(DB, Slack, Jira)와 연결하려면?
+                        </p>
+                        <span class="inline-block px-6 py-3 bg-blue-600 text-white font-black text-xl border-4 border-black shadow-[4px_4px_0px_0px_#000]">▶ 파트 4: AI를 위한 USB-C 포트, 'MCP'</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 24: Part 3. 7-1 화려한 데모의 함정과 프로덕션의 벽 -->
+        <section class="slide">
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
+                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 3. AI 에이전트 구조 설계 방법 > 7-1. 화려한 데모의 함정과 프로덕션의 벽</div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">화려한 데모의 함정과 프로덕션의 벽</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8 flex-1 items-stretch">
+                    <div class="w-full md:w-1/2 border-4 border-black p-8 bg-white shadow-[8px_8px_0px_0px_#000] flex flex-col relative">
+                        <div class="absolute -top-4 -left-4 bg-yellow-300 border-2 border-black px-4 py-1 font-black text-xl">Expectation</div>
+                        <h3 class="text-2xl font-black mb-4 mt-2">데모 (Demo) 환경</h3>
+                        <p class="text-lg font-medium text-gray-700 leading-relaxed mb-4">프레임워크 연동 및 2~3개 에이전트 띄우기. <span class="bg-black text-white px-2">70~80% 기능 단숨에 완성</span></p>
+                        
+                        <div class="mt-auto border-2 border-dashed border-gray-400 p-4 text-center bg-gray-50">
+                            <span class="text-2xl">👏</span><br><span class="font-bold">"이제 우리도 AI로 다 자동화했다!"</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden md:flex font-black text-4xl text-gray-400 items-center">VS</div>
+                    
+                    <div class="w-full md:w-1/2 border-4 border-black p-8 bg-gray-50 shadow-[8px_8px_0px_0px_#000] flex flex-col relative">
+                        <div class="absolute -top-4 -left-4 bg-red-600 text-white border-2 border-black px-4 py-1 font-black text-xl">Reality</div>
+                        <h3 class="text-2xl font-black mb-4 mt-2 text-red-700">프로덕션 (Production) 환경</h3>
+                        <p class="text-lg font-medium text-gray-800 leading-relaxed mb-4">나머지 20%의 예외 상황 처리가 끔찍한 디버깅의 악몽으로 전락.</p>
+                        
+                        <ul class="mt-auto space-y-2 font-bold text-red-600">
+                            <li>⚠️ 엉뚱한 API 무한 루프 호출</li>
+                            <li>⚠️ 에러 무시 후 강제 다음 단계 진행</li>
+                            <li>⚠️ 시스템 전체 통제 불능 상태 발생</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 25: Part 3. 7-2 분산 시스템으로서의 에이전트 -->
+        <section class="slide">
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
+                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 3. AI 에이전트 구조 설계 방법 > 7-2. 분산 시스템으로서의 에이전트</div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">에이전트 50개는 '분산 시스템'의 문제다</h2>
+                
+                <div class="flex flex-col gap-6 flex-1 justify-center">
+                    <div class="border-l-8 border-black bg-white border-y-2 border-r-2 p-6 relative shadow-[4px_4px_0px_0px_#000]">
+                        <p class="text-xl font-bold text-gray-600 mb-2">Databricks 수석 엔지니어 (Sandipan Bhaumik)</p>
+                        <p class="text-2xl font-black text-black">"AI 에이전트 한 개는 훌륭한 기능(Feature)이지만,<br>에이전트 50개를 연결하는 것은 아무도 제대로 논의하지 않는 거대한 <span class="bg-red-200 px-2 underline decoration-red-500">분산 시스템(Distributed Systems) 공학</span>의 문제다."</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                        <div class="border-4 border-black p-6 bg-white">
+                            <h3 class="text-xl font-black mb-3 border-b-2 border-black pb-2 text-blue-700">마케팅의 환상 (모놀리식)</h3>
+                            <p class="text-gray-700 font-medium leading-relaxed mb-2">여러 에이전트들이 단톡방에 모여 수다를 떨며 동적으로 문맥을 공유하고 협업할 것이다.</p>
+                            <p class="font-bold text-red-600 text-sm">▶ 토큰 비용만 기하급수적 낭비, 스케일링 불가</p>
+                        </div>
+                        
+                        <div class="border-4 border-black p-6 bg-black text-white">
+                            <h3 class="text-xl font-black mb-3 border-b-2 border-white pb-2 text-yellow-300">프로덕션 안티패턴 (현실)</h3>
+                            <ul class="list-disc pl-5 space-y-2 font-medium text-gray-200">
+                                <li>에이전트 간 핸드오프(Handoff) 조용히 실패</li>
+                                <li>참조하던 데이터의 부패</li>
+                                <li>의사결정 경로 추적 절대 불가</li>
+                            </ul>
+                            <p class="mt-3 text-red-400 font-bold text-sm">※ 가트너: 무분별한 AI 프로젝트 40%, 2027년 내 취소 경고</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 26: Part 3. 7-3 12-팩터 에이전트 원칙 -->
+        <section class="slide">
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
+                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 3. AI 에이전트 구조 설계 방법 > 7-3. 12-팩터 에이전트 원칙</div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">클라우드 네이티브의 지혜: 12-Factor 에이전트 원칙</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
+                    <div class="border-4 border-black p-6 bg-white flex flex-col">
+                        <h3 class="text-xl font-black mb-2"><span class="bg-black text-white px-2 mr-2">1</span> 상태의 분리와 외부화</h3>
+                        <p class="text-sm font-bold text-gray-500 mb-2">Stateless Agent Design</p>
+                        <p class="text-gray-700 font-medium">프롬프트 내에 비즈니스 상태를 우겨넣지 마세요. 에이전트는 일회성(Ephemeral) 워커로 설계하고, 기억해야 할 상태 데이터는 반드시 외부 DB로 이관해야 합니다.</p>
+                    </div>
+                    
+                    <div class="border-4 border-black p-6 bg-gray-50 flex flex-col">
+                        <h3 class="text-xl font-black mb-2"><span class="bg-black text-white px-2 mr-2">2</span> 작고 집중된 에이전트</h3>
+                        <p class="text-sm font-bold text-gray-500 mb-2">Small, Focused Agents</p>
+                        <p class="text-gray-700 font-medium">한 에이전트가 20단계를 처리하면 고장 납니다. 최대 3~10단계의 명확한 목표만 처리하도록 작게 쪼개는 것이 높은 신뢰성을 보장합니다.</p>
+                    </div>
+                    
+                    <div class="border-4 border-black p-6 bg-gray-50 flex flex-col">
+                        <h3 class="text-xl font-black mb-2"><span class="bg-black text-white px-2 mr-2">3</span> 컨텍스트 창의 명시적 관리</h3>
+                        <p class="text-sm font-bold text-gray-500 mb-2">Manage Context Windows Explicitly</p>
+                        <p class="text-gray-700 font-medium">과거 대화 기록을 맹목적으로 이어 붙이지 마십시오. 워커에게는 작업을 수행하는 데 필요한 '최소한의 정보'만 쥐여주는 것이 핵심입니다.</p>
+                    </div>
+                    
+                    <div class="border-4 border-black p-6 bg-white flex flex-col">
+                        <h3 class="text-xl font-black mb-2"><span class="bg-black text-white px-2 mr-2">4</span> 엄격한 오케스트레이션</h3>
+                        <p class="text-sm font-bold text-gray-500 mb-2">Strict Orchestration</p>
+                        <p class="text-gray-700 font-medium">하위 에이전트들에게 복잡한 제어 흐름(Control Flow)을 맡기지 마세요. 조율과 예외 처리는 최상단의 오케스트레이터가 전담해야 합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 27: Part 3. 7-4 파트 3 마무리 및 다음 세션 예고 -->
+        <section class="slide">
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col justify-center text-center relative">
+                <div class="absolute top-12 left-12 text-sm font-bold border-b-2 border-black pb-2 text-left">Part 3. AI 에이전트 구조 설계 방법 > 7-4. 파트 3 마무리 및 다음 세션 예고</div>
+                
+                <div class="border-8 border-black p-12 bg-white relative mt-8">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-black text-white px-6 py-2 text-xl font-bold uppercase tracking-widest">
+                        Summary
+                    </div>
+                    
+                    <h2 class="text-4xl md:text-5xl font-black leading-tight mb-8 mt-4">
+                        성공하는 AI 에이전트는 가장<br>
+                        <span class="bg-black text-white px-4 inline-block mt-4 pb-2 underline decoration-white decoration-4 underline-offset-8">견고하게 엔지니어링된 소프트웨어</span>
+                    </h2>
+                    
+                    <p class="text-xl font-medium leading-relaxed max-w-3xl mx-auto mb-8 text-gray-800">
+                        에이전트도 결국 명확한 프롬프트, 조건 분기, 문맥, 반복 루프의 집합일 뿐입니다.<br>
+                        12-팩터 설계 원칙 준수 시, 데모용 장난감을 넘어 <strong>진정한 엔터프라이즈급 자동화 엔진</strong>으로 거듭납니다.
+                    </p>
+                    
+                    <div class="border-t-4 border-black pt-8 bg-gray-50 -mx-12 -mb-12 p-10 flex flex-col items-center">
+                        <p class="text-xl font-bold text-black mb-4">
+                            이 똑똑한 뇌에 '손과 발'을 달아 실제 비즈니스 세상(DB, Github, Slack)과 연결하려면?
+                        </p>
+                        <div class="inline-block px-8 py-3 bg-blue-600 text-white font-black text-2xl border-4 border-black shadow-[6px_6px_0px_0px_#000]">
+                            ▶ 파트 4: AI를 위한 USB-C 포트, 'MCP'
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 28: Part 4. 8 무한한 확장의 열쇠 -->
         <section class="slide">
             <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col justify-center text-center relative">
                 <div class="absolute top-12 left-12 text-sm font-bold border-b-2 border-black pb-2 text-left">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 8. 무한한 확장의 열쇠</div>
@@ -945,7 +1167,7 @@
             </div>
         </section>
 
-        <!-- Slide 23: Part 4. 9 실무 자동화 워크플로우 -->
+        <!-- Slide 29: Part 4. 9 실무 자동화 워크플로우 -->
         <section class="slide">
             <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
                 <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 9. 실무 자동화 워크플로우</div>
@@ -976,7 +1198,7 @@
             </div>
         </section>
 
-        <!-- Slide 24: Part 5. 10 거버넌스 구축 -->
+        <!-- Slide 30: Part 5. 10 거버넌스 구축 -->
         <section class="slide">
             <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
                 <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 5. 마무리 및 질의 응답 > 10. 거버넌스 구축</div>
@@ -1034,7 +1256,7 @@
     <!-- 네비게이션 컨트롤 -->
     <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4 z-50">
         <button id="prev-btn" class="w-12 h-12 bg-white border-2 border-black rounded-full font-bold text-xl hover:bg-black hover:text-white transition-colors flex justify-center items-center cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1">&larr;</button>
-        <div id="slide-indicator" class="flex items-center justify-center font-bold text-lg px-4 border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">1 / 24</div>
+        <div id="slide-indicator" class="flex items-center justify-center font-bold text-lg px-4 border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">1 / 30</div>
         <button id="next-btn" class="w-12 h-12 bg-white border-2 border-black rounded-full font-bold text-xl hover:bg-black hover:text-white transition-colors flex justify-center items-center cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1">&rarr;</button>
     </div>
 
@@ -1044,7 +1266,7 @@
         const slideIndicator = document.getElementById('slide-indicator');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
-        const totalSlides = 24;
+        const totalSlides = 30;
         let currentSlide = 0;
         let isAnimating = false;
 
