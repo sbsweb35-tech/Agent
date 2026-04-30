@@ -28,7 +28,7 @@
         /* 슬라이드 컨테이너 전환 효과 */
         #slider-container {
             display: flex;
-            width: 3300vw; /* 33개 슬라이드 * 100vw */
+            width: 3700vw; /* 37개 슬라이드 * 100vw */
             height: 100vh;
             transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
@@ -111,7 +111,7 @@
 
     <!-- 글로벌 프로그레스 바 -->
     <div class="fixed top-0 left-0 w-full h-2 bg-gray-200 z-50">
-        <div id="progress-bar" class="h-full bg-black transition-all duration-300 w-[3.03%]"></div>
+        <div id="progress-bar" class="h-full bg-black transition-all duration-300 w-[2.70%]"></div>
     </div>
 
     <!-- 슬라이드 전체 래퍼 -->
@@ -1284,38 +1284,193 @@
             </div>
         </section>
 
-        <!-- Slide 32: Part 4. 9 실무 자동화 워크플로우 -->
+        <!-- Slide 32: Part 4. 9-1 오프닝 및 에이전트의 물리적 확장 -->
         <section class="slide">
             <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
-                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 9. 실무 자동화 워크플로우</div>
+                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 9-1. 오프닝 및 에이전트의 물리적 확장</div>
                 
-                <h2 class="text-3xl md:text-4xl font-bold mb-8">9. 실무 자동화 워크플로우: MCP 활용 시나리오</h2>
-                <p class="text-lg mb-8 font-medium">MCP를 연동하면 Claude Code의 물리적 행동 반경이 <span class="underline underline-offset-4 font-bold">무한대로 확장</span>됩니다.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">컨텍스트 스위칭의 종말과 에이전트의 물리적 확장</h2>
                 
-                <div class="flex flex-col gap-6 flex-1">
-                    <div class="flex border-2 border-black items-stretch h-1/3">
-                        <div class="w-1/4 bg-black text-white flex items-center justify-center font-bold text-xl p-4">GitHub 연동</div>
-                        <div class="w-3/4 p-6 flex flex-col justify-center">
-                            <p class="text-lg">원격 저장소를 분석하고, 풀 리퀘스트를 직접 생성/업데이트하며 이슈를 추적 관리합니다.</p>
+                <div class="flex flex-col md:flex-row gap-8 flex-1 items-center">
+                    <div class="w-full md:w-1/2 border-4 border-black p-8 bg-gray-50 flex flex-col relative shadow-[8px_8px_0px_0px_#000]">
+                        <div class="absolute -top-4 -left-4 bg-gray-600 text-white border-2 border-black px-3 py-1 font-bold">과거 (Past)</div>
+                        <h3 class="text-2xl font-black mb-4 mt-2">무한 컨텍스트 스위칭</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-4">에러 로그는 AWS, 기획서는 Notion, 이슈는 Jira에서 확인...</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="border-2 border-black px-3 py-1 bg-white font-bold text-sm">AWS Console</span>
+                            <span class="border-2 border-black px-3 py-1 bg-white font-bold text-sm">Notion / Drive</span>
+                            <span class="border-2 border-black px-3 py-1 bg-white font-bold text-sm">Jira / Github</span>
+                            <span class="border-2 border-black px-3 py-1 bg-white font-bold text-sm">Slack</span>
                         </div>
                     </div>
-                    <div class="flex border-2 border-black items-stretch h-1/3 bg-gray-50">
-                        <div class="w-1/4 border-r-2 border-black flex items-center justify-center font-bold text-xl p-4 text-center">파일 및 인프라 관리</div>
-                        <div class="w-3/4 p-6 flex flex-col justify-center">
-                            <p class="text-lg">Google Drive와 연동해 문서를 자동 분류하거나, <span class="font-bold">Docker MCP</span>를 통해 컨테이너 생명주기를 자연어로 통제합니다.</p>
-                        </div>
-                    </div>
-                    <div class="flex border-2 border-black items-stretch h-1/3">
-                        <div class="w-1/4 bg-black text-white flex items-center justify-center font-bold text-xl p-4">브라우저 자동화</div>
-                        <div class="w-3/4 p-6 flex flex-col justify-center">
-                            <p class="text-lg">Playwright MCP 등을 활용하여 웹 UI를 직접 테스트하고 데이터를 스크래핑하는 디지털 워커로 기능합니다.</p>
+                    
+                    <div class="hidden md:flex font-black text-4xl text-gray-400">→</div>
+                    
+                    <div class="w-full md:w-1/2 border-4 border-black p-8 bg-black text-white flex flex-col relative shadow-[8px_8px_0px_0px_#aaa]">
+                        <div class="absolute -top-4 -left-4 bg-yellow-300 text-black border-2 border-black px-3 py-1 font-bold">현재 (Present)</div>
+                        <h3 class="text-2xl font-black mb-4 mt-2">단일 터미널 자율 통제</h3>
+                        <p class="text-lg text-gray-300 leading-relaxed">MCP 서버를 연동한 클로드 코드가 터미널 창 하나에서 자연어 대화만으로 모든 외부 시스템을 자율적으로 제어합니다.</p>
+                        <div class="mt-6 border-l-4 border-yellow-300 pl-4 py-2 bg-gray-900">
+                            <code class="text-green-400 font-mono text-sm">> "Jira 이슈 #123 확인하고 DB 로그 분석해줘"</code>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 33: Part 5. 10 거버넌스 구축 -->
+        <!-- Slide 33: Part 4. 9-2 개발 인프라의 완전 통제 -->
+        <section class="slide">
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
+                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 9-2. 개발 인프라의 완전 통제 (GitHub & Docker)</div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">개발 인프라의 완전 통제: GitHub & Docker</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 flex-1">
+                    <div class="border-4 border-black p-8 bg-white shadow-[6px_6px_0px_0px_#000] flex flex-col">
+                        <div class="flex items-center gap-3 mb-4 border-b-4 border-black pb-4">
+                            <span class="text-4xl">🐙</span>
+                            <h3 class="text-2xl font-black">GitHub MCP</h3>
+                        </div>
+                        <p class="text-lg font-bold text-blue-700 mb-4">버전 관리의 자동화</p>
+                        <ul class="list-disc pl-5 space-y-3 text-gray-800 text-lg font-medium">
+                            <li>원격 저장소(Repository) 직접 읽기 및 분석</li>
+                            <li>풀 리퀘스트(PR) 스스로 생성 및 업데이트</li>
+                            <li>팀원 PR 리뷰 분석 후 코드 자율 수정</li>
+                            <li>GitHub 이슈 추적 및 상태 관리</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-4 border-black p-8 bg-blue-50 shadow-[6px_6px_0px_0px_#000] flex flex-col">
+                        <div class="flex items-center gap-3 mb-4 border-b-4 border-black pb-4">
+                            <span class="text-4xl">🐳</span>
+                            <h3 class="text-2xl font-black">Docker MCP</h3>
+                        </div>
+                        <p class="text-lg font-bold text-blue-700 mb-4">인프라 데브옵스 대행</p>
+                        <ul class="list-disc pl-5 space-y-3 text-gray-800 text-lg font-medium">
+                            <li>컨테이너 스핀업(Spin-up) 및 환경 세팅</li>
+                            <li>실행 중인 서비스의 에러 로그 실시간 점검</li>
+                            <li>장애 발생 시 컨테이너 자율 재시작</li>
+                        </ul>
+                        <div class="mt-auto bg-black text-white p-3 text-sm font-mono mt-4 font-bold border-2 border-black">
+                            > "현재 떠 있는 DB 컨테이너 로그 확인해서 연결 오류 원인 찾아줘"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 34: Part 4. 9-3 코딩 어시스턴트에서 디지털 워커로의 진화 -->
+        <section class="slide">
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
+                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 9-3. 코딩 어시스턴트에서 '디지털 워커'로의 진화</div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">코딩 보조를 넘어 완벽한 '디지털 워커'로 진화</h2>
+                
+                <div class="flex flex-col gap-6 flex-1 justify-center">
+                    <div class="border-4 border-black p-6 bg-white flex flex-col md:flex-row items-stretch shadow-[6px_6px_0px_0px_#000]">
+                        <div class="md:w-1/4 bg-yellow-200 border-b-4 md:border-b-0 md:border-r-4 border-black p-4 flex flex-col justify-center items-center text-center">
+                            <span class="text-4xl mb-2">🌐</span>
+                            <h3 class="font-black text-lg">브라우저 자동화</h3>
+                            <p class="text-xs font-bold mt-1">(Playwright MCP)</p>
+                        </div>
+                        <div class="md:w-3/4 p-6 flex flex-col justify-center">
+                            <p class="text-lg font-medium text-gray-800 mb-3">웹 브라우저를 직접 띄우고 제어하며 UI를 테스트하고 데이터를 스크래핑합니다.</p>
+                            <code class="bg-gray-100 border border-gray-300 p-2 text-sm text-blue-700 font-bold block">
+                                > "경쟁사 웹사이트 5곳 접속해서 메인 랜딩페이지 스크린샷 찍고 분석해 줘"
+                            </code>
+                        </div>
+                    </div>
+                    
+                    <div class="border-4 border-black p-6 bg-white flex flex-col md:flex-row items-stretch shadow-[6px_6px_0px_0px_#000]">
+                        <div class="md:w-1/4 bg-blue-200 border-b-4 md:border-b-0 md:border-r-4 border-black p-4 flex flex-col justify-center items-center text-center">
+                            <span class="text-4xl mb-2">📁</span>
+                            <h3 class="font-black text-lg">지능형 파일 관리</h3>
+                            <p class="text-xs font-bold mt-1">(Drive / OneDrive MCP)</p>
+                        </div>
+                        <div class="md:w-3/4 p-6 flex flex-col justify-center">
+                            <p class="text-lg font-medium text-gray-800 mb-3">복잡한 디렉토리를 스스로 스캔하여 파일 내용을 파악하고 논리적으로 분류합니다.</p>
+                            <code class="bg-gray-100 border border-gray-300 p-2 text-sm text-blue-700 font-bold block">
+                                > "지난달 마케팅 관련 PDF와 이미지만 찾아서 '3월 마케팅' 폴더로 옮겨줘"
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 35: Part 4. 9-4 로컬 인증의 혁신, OpenTabs MCP -->
+        <section class="slide">
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
+                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 9-4. 로컬 인증의 혁신, OpenTabs MCP</div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">로컬 인증의 혁신: OpenTabs MCP</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8 flex-1 items-center">
+                    <div class="w-full md:w-1/2 flex flex-col gap-6">
+                        <div class="border-l-8 border-red-600 bg-red-50 p-4">
+                            <h3 class="text-xl font-bold mb-1 text-red-800">기존의 거대한 장벽</h3>
+                            <p class="text-gray-700 font-medium">슬랙, 지라, 노션 등 수십 개 서비스의 API 키를 발급받고 OAuth 인증을 개별 설정하는 것은 엄청난 고통이었습니다.</p>
+                        </div>
+                        
+                        <div class="border-l-8 border-black bg-white shadow-md p-4 mt-2">
+                            <h3 class="text-2xl font-black mb-2 text-blue-700">OpenTabs의 혁신</h3>
+                            <p class="text-lg text-gray-800 font-bold mb-2">API 키 발급 불필요!</p>
+                            <p class="text-gray-700 font-medium leading-relaxed">여러분이 이미 로그인해 둔 크롬(Chrome) 브라우저의 탭 세션을 그대로 경유(Routing)하여 도구 호출을 수행합니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-1/2 border-4 border-black p-8 bg-black text-white relative shadow-[8px_8px_0px_0px_#aaa] flex flex-col justify-center items-center">
+                        <div class="text-center w-full mb-6">
+                            <div class="border-2 border-white p-3 inline-block font-bold">Claude Code</div>
+                        </div>
+                        <div class="text-3xl font-black mb-2 text-yellow-300">↓ (세션 경유)</div>
+                        <div class="text-center w-full mb-6">
+                            <div class="border-4 border-yellow-300 p-4 inline-block font-black text-xl text-yellow-300">Chrome Browser (Logged in)</div>
+                        </div>
+                        <div class="text-3xl font-black mb-2 text-yellow-300">↓</div>
+                        <div class="flex justify-center gap-4 w-full">
+                            <div class="border-2 border-white p-2 text-sm font-bold w-1/3 text-center bg-gray-800">Jira</div>
+                            <div class="border-2 border-white p-2 text-sm font-bold w-1/3 text-center bg-gray-800">Notion</div>
+                            <div class="border-2 border-white p-2 text-sm font-bold w-1/3 text-center bg-gray-800">Google Docs</div>
+                        </div>
+                        
+                        <p class="mt-8 text-center text-sm font-bold border-t border-gray-600 pt-4">봇(Bot)이 아닌 나 자신의 계정으로 가장 빠르고 강력하게 연동</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 36: Part 4. 9-5 파트 4 마무리 및 다음 세션 예고 -->
+        <section class="slide">
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col justify-center text-center relative">
+                <div class="absolute top-12 left-12 text-sm font-bold border-b-2 border-black pb-2 text-left">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 9-5. 파트 4 마무리 및 다음 세션 예고</div>
+                
+                <div class="border-8 border-black p-10 bg-white relative mt-8 mx-auto max-w-4xl">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-black text-white px-6 py-2 text-xl font-bold uppercase tracking-widest">
+                        Wrap Up & Next
+                    </div>
+                    
+                    <h2 class="text-3xl md:text-4xl font-black leading-tight mb-6 mt-4">
+                        편집기에 갇힌 앵무새에서<br><span class="bg-black text-white px-4 inline-block mt-2 pb-1">진정한 자율형 에이전트로</span>
+                    </h2>
+                    
+                    <p class="text-lg font-medium leading-relaxed mb-6 text-gray-800 text-left px-8">
+                        클로드 코드는 더 이상 텍스트 편집기 안에 갇혀있지 않습니다.<br>
+                        MCP라는 강력한 날개를 달고 <strong>물리적 비즈니스 세상(GitHub, Docker, Browser, Drive)</strong>과 직접 소통하며 실무의 80%를 알아서 척척 해냅니다.<br><br>
+                        <span class="text-red-600 font-bold border-b-2 border-red-600">핵심 질문:</span> 코딩도 AI가, 테스트도 AI가 한다면 우리 인간은 무엇을 해야 할까요?
+                    </p>
+                    
+                    <div class="border-t-4 border-black pt-6 bg-gray-50 -mx-10 -mb-10 p-8">
+                        <p class="text-xl font-bold text-black mb-4">
+                            SDLC의 변화, 인지적 오프로딩의 함정, 그리고 우리의 거버넌스 전략
+                        </p>
+                        <span class="inline-block px-6 py-3 bg-red-600 text-white font-black text-xl border-4 border-black shadow-[4px_4px_0px_0px_#000]">▶ 파트 5: SDLC 생산성 혁신과 에이전트 거버넌스 구축</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 37: Part 5. 10 거버넌스 구축 -->
         <section class="slide">
             <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
                 <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 5. 마무리 및 질의 응답 > 10. 거버넌스 구축</div>
@@ -1373,7 +1528,7 @@
     <!-- 네비게이션 컨트롤 -->
     <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4 z-50">
         <button id="prev-btn" class="w-12 h-12 bg-white border-2 border-black rounded-full font-bold text-xl hover:bg-black hover:text-white transition-colors flex justify-center items-center cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1">&larr;</button>
-        <div id="slide-indicator" class="flex items-center justify-center font-bold text-lg px-4 border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">1 / 33</div>
+        <div id="slide-indicator" class="flex items-center justify-center font-bold text-lg px-4 border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">1 / 37</div>
         <button id="next-btn" class="w-12 h-12 bg-white border-2 border-black rounded-full font-bold text-xl hover:bg-black hover:text-white transition-colors flex justify-center items-center cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1">&rarr;</button>
     </div>
 
@@ -1383,7 +1538,7 @@
         const slideIndicator = document.getElementById('slide-indicator');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
-        const totalSlides = 33;
+        const totalSlides = 37;
         let currentSlide = 0;
         let isAnimating = false;
 
