@@ -28,7 +28,7 @@
         /* 슬라이드 컨테이너 전환 효과 */
         #slider-container {
             display: flex;
-            width: 3000vw; /* 30개 슬라이드 * 100vw */
+            width: 3300vw; /* 33개 슬라이드 * 100vw */
             height: 100vh;
             transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
@@ -111,7 +111,7 @@
 
     <!-- 글로벌 프로그레스 바 -->
     <div class="fixed top-0 left-0 w-full h-2 bg-gray-200 z-50">
-        <div id="progress-bar" class="h-full bg-black transition-all duration-300 w-[3.33%]"></div>
+        <div id="progress-bar" class="h-full bg-black transition-all duration-300 w-[3.03%]"></div>
     </div>
 
     <!-- 슬라이드 전체 래퍼 -->
@@ -1143,31 +1143,148 @@
             </div>
         </section>
 
-        <!-- Slide 28: Part 4. 8 무한한 확장의 열쇠 -->
+        <!-- Slide 28: Part 4. 8-1 지옥 같은 API 연동의 끝, MCP의 등장 -->
         <section class="slide">
-            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col justify-center text-center relative">
-                <div class="absolute top-12 left-12 text-sm font-bold border-b-2 border-black pb-2 text-left">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 8. 무한한 확장의 열쇠</div>
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
+                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 8-1. 지옥 같은 API 연동의 끝, MCP의 등장</div>
                 
-                <h2 class="text-3xl md:text-5xl font-bold mb-12 mt-10">8. 무한한 확장의 열쇠:<br><span class="bg-black text-white px-4 mt-2 inline-block">모델 컨텍스트 프로토콜 (MCP)</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">AI를 위한 USB-C 포트: 모델 컨텍스트 프로토콜(MCP)</h2>
                 
-                <div class="border-4 border-black p-10 mx-auto max-w-4xl relative">
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-white px-4 text-2xl font-black">
-                        "AI를 위한 USB-C"
+                <div class="flex flex-col md:flex-row gap-8 flex-1 items-center">
+                    <div class="w-full md:w-1/2 flex flex-col gap-6">
+                        <h3 class="text-2xl font-black">파편화된 API 통합의 한계</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">과거에는 에이전트가 지라(Jira), 슬랙, 사내 데이터베이스와 소통하려면 도구마다 맞춤형 API 통합 코드를 일일이 짜야 했습니다. 하나가 업데이트되면 코드가 모두 망가졌죠.</p>
+                        <div class="border-l-4 border-black pl-4 py-2 mt-4 bg-gray-50">
+                            <p class="font-bold text-black">Anthropic 주도 오픈소스 표준 혁신</p>
+                            <p class="text-gray-600 mt-1">MCP라는 표준 인터페이스 하나면 AI가 그 어떤 외부 도구나 데이터베이스와도 즉시 소통할 수 있게 됩니다.</p>
+                        </div>
                     </div>
-                    <p class="text-xl leading-relaxed text-left">
-                        MCP는 강력한 에이전트가 기업의 사일로화된 시스템과 소통하기 위한 기술적 표준입니다. AI 어시스턴트와 콘텐츠 저장소, 비즈니스 툴킷 등을 안전하게 연결합니다.
-                    </p>
-                    <div class="flex justify-center items-center gap-8 mt-10">
-                        <div class="border-2 border-black p-4 w-1/3 font-bold">MCP 서버<br><span class="text-sm font-normal text-gray-600">(데이터 원천 노출)</span></div>
-                        <div class="text-3xl font-bold">↔</div>
-                        <div class="border-2 border-black p-4 bg-black text-white w-1/3 font-bold">MCP 클라이언트<br><span class="text-sm font-normal text-gray-300">(Claude Code 등 액션 트리거)</span></div>
+                    
+                    <div class="w-full md:w-1/2 border-8 border-black p-10 bg-black text-white relative shadow-[12px_12px_0px_0px_#aaa] flex flex-col justify-center items-center text-center">
+                        <div class="text-6xl font-black mb-4">USB-C</div>
+                        <p class="text-2xl font-bold text-yellow-300 border-b-2 border-yellow-300 pb-2 mb-6">for AI Agents</p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            제조사 상관없이 케이블 하나로 스마트폰, 노트북, 모니터를 다 연결하듯,<br>
+                            <strong>단 하나의 표준 인터페이스로 무한한 도구 확장!</strong>
+                        </p>
                     </div>
-                    <p class="mt-8 text-sm font-bold text-gray-600 tracking-wide">💡 개발자는 <span class="code-style">.mcp.json</span> 파일 하나만 구성하면 수많은 외부 도구를 즉시 연동</p>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 29: Part 4. 9 실무 자동화 워크플로우 -->
+        <!-- Slide 29: Part 4. 8-2 극도로 단순한 아키텍처: 클라이언트와 서버 -->
+        <section class="slide">
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col justify-center text-center relative">
+                <div class="absolute top-12 left-12 text-sm font-bold border-b-2 border-black pb-2 text-left">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 8-2. 극도로 단순한 아키텍처: 클라이언트와 서버</div>
+                
+                <h2 class="text-3xl md:text-5xl font-bold mb-12 mt-10">클라이언트와 서버:<br><span class="bg-black text-white px-4 mt-2 inline-block">플러그 앤 플레이 아키텍처</span></h2>
+                
+                <div class="border-4 border-black p-10 mx-auto max-w-4xl relative">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-white px-4 text-xl font-black">
+                        딱 두 가지만 기억하세요
+                    </div>
+                    
+                    <div class="flex justify-center items-stretch gap-8 mt-6 mb-8">
+                        <div class="border-4 border-black p-6 w-1/3 bg-gray-50 flex flex-col justify-center">
+                            <h3 class="font-black text-2xl mb-2">MCP 서버</h3>
+                            <p class="text-sm font-bold text-gray-600 mb-4">(Data Provider)</p>
+                            <p class="text-sm">사내 DB, Github, Google Drive 등 데이터를 내어주는 도구들</p>
+                        </div>
+                        
+                        <div class="flex flex-col justify-center items-center font-bold">
+                            <div class="text-4xl text-blue-600">↔</div>
+                            <div class="text-xs bg-gray-200 px-2 border border-black mt-2">.mcp.json 연동</div>
+                        </div>
+                        
+                        <div class="border-4 border-black p-6 bg-black text-white w-1/3 flex flex-col justify-center">
+                            <h3 class="font-black text-2xl mb-2 text-yellow-300">MCP 클라이언트</h3>
+                            <p class="text-sm font-bold text-gray-400 mb-4">(Claude Code)</p>
+                            <p class="text-sm">서버에 접속해 도구 리스트를 확인하고 액션을 트리거하는 주체</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-lg font-medium text-gray-800 tracking-wide text-left border-t-2 border-gray-300 pt-6">
+                        "클라우드 코드 환경 설정 파일에 단 몇 줄만 적어주면 끝납니다.<br>
+                        클로드가 알아서 서버에 접속해 기능을 파악하고 <strong>자신의 능력처럼 즉시 흡수</strong>합니다."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 30: Part 4. 8-3 수동적 관찰자에서 능동적 디지털 워커로의 전환 -->
+        <section class="slide">
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
+                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 8-3. 수동적 관찰자에서 능동적 디지털 워커로의 전환</div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">수동적 챗봇에서 '능동적 디지털 워커'로</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8 flex-1 items-stretch">
+                    <div class="w-full md:w-1/3 border-4 border-gray-300 p-6 flex flex-col relative opacity-70">
+                        <div class="bg-gray-300 text-black px-2 py-1 font-bold inline-block self-start mb-4 text-sm">과거의 LLM</div>
+                        <h3 class="text-xl font-black mb-2">채팅창에 갇힌 관찰자</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">코드는 읽을 수 있지만 실제 환경과 직접 상호작용 불가. 노션 기획서를 읽으려면 사람이 직접 복사/붙여넣기 해야 했습니다.</p>
+                    </div>
+                    
+                    <div class="w-full md:w-2/3 border-4 border-black p-6 bg-white shadow-[8px_8px_0px_0px_#000] flex flex-col relative">
+                        <div class="bg-black text-white px-2 py-1 font-bold inline-block self-start mb-4 text-sm">MCP 장착 후</div>
+                        <h3 class="text-2xl font-black mb-4">워크플로우 직접 개입 (Action)</h3>
+                        
+                        <div class="bg-gray-50 border-2 border-black p-4 mb-4 font-mono text-sm text-blue-700 font-bold">
+                            "현재 고객 DB에서 최근 결제 오류가 난 사람들을 찾아서 슬랙으로 보고해 줘"
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-2 flex-1">
+                            <div class="border-2 border-black p-3 text-center w-1/4 bg-white font-bold text-sm">1. 자연어 명령</div>
+                            <div class="text-xl font-black">→</div>
+                            <div class="border-2 border-black p-3 text-center w-1/4 bg-yellow-100 font-bold text-sm">2. DB 쿼리 실행<br>(MCP Server)</div>
+                            <div class="text-xl font-black">→</div>
+                            <div class="border-2 border-black p-3 text-center w-1/4 bg-blue-100 font-bold text-sm">3. Slack 전송<br>(MCP Server)</div>
+                        </div>
+                        
+                        <p class="mt-4 text-gray-800 font-bold border-t-2 border-dashed border-gray-300 pt-4 text-center">
+                            코딩 한 줄 없이, 오직 자연어만으로 외부 시스템 물리적 통제 가능!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 31: Part 4. 8-4 엔터프라이즈 환경에서의 MCP와 다음 주제 예고 -->
+        <section class="slide">
+            <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
+                <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 8-4. 엔터프라이즈 환경에서의 MCP와 다음 주제 예고</div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">엔터프라이즈 보안과 거대한 오픈소스 생태계</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8 flex-1">
+                    <div class="w-full md:w-1/2 flex flex-col gap-6">
+                        <div class="border-l-8 border-black pl-6 py-2 bg-gray-50">
+                            <h3 class="text-xl font-black mb-2">보안의 완벽한 해답</h3>
+                            <p class="text-gray-700 leading-relaxed font-medium">민감한 사내 데이터를 외부 AI 회사 서버로 넘길 필요가 없습니다. 회사 내부망에 로컬 MCP 서버를 띄워두고 에이전트가 그 서버와만 안전하게 통신하도록 구성합니다.</p>
+                        </div>
+                        
+                        <div class="border-4 border-black p-6 bg-white shadow-[6px_6px_0px_0px_#000]">
+                            <h3 class="text-xl font-black mb-2 text-blue-700">폭발적으로 성장하는 생태계</h3>
+                            <p class="text-gray-700 mb-4 font-medium">오픈소스 커뮤니티에서 수백, 수천 개의 Pre-built MCP 서버들이 쏟아져 나오고 있습니다.</p>
+                            <p class="font-bold text-sm bg-gray-200 px-2 py-1 inline-block">※ Linux Foundation 산하 편입, 빅테크 채택 가속화</p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-1/2 border-8 border-black p-8 bg-black text-white flex flex-col justify-center items-center text-center relative">
+                        <h3 class="text-3xl font-black mb-6 text-yellow-300">Next Step</h3>
+                        <p class="text-xl leading-relaxed mb-8">
+                            이렇게 마법 같은 'AI의 손과 발' MCP를 실무 워크플로우에 적용하면 어떤 기적 같은 자동화가 가능해질까요?
+                        </p>
+                        <div class="border-t-4 border-white pt-6 w-full">
+                            <p class="text-lg font-bold">Github 연동 / Docker 제어 / 파일 시스템 분류</p>
+                            <p class="text-2xl font-black mt-2">▶ 실무 자동화 워크플로우 시나리오</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 32: Part 4. 9 실무 자동화 워크플로우 -->
         <section class="slide">
             <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
                 <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 4. AI 에이전트를 통한 실무 활용 및 확장 전략 > 9. 실무 자동화 워크플로우</div>
@@ -1198,7 +1315,7 @@
             </div>
         </section>
 
-        <!-- Slide 30: Part 5. 10 거버넌스 구축 -->
+        <!-- Slide 33: Part 5. 10 거버넌스 구축 -->
         <section class="slide">
             <div class="presentation-card w-full max-w-6xl h-[85vh] p-12 flex flex-col relative">
                 <div class="text-sm font-bold mb-6 border-b-2 border-black pb-2">Part 5. 마무리 및 질의 응답 > 10. 거버넌스 구축</div>
@@ -1256,7 +1373,7 @@
     <!-- 네비게이션 컨트롤 -->
     <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4 z-50">
         <button id="prev-btn" class="w-12 h-12 bg-white border-2 border-black rounded-full font-bold text-xl hover:bg-black hover:text-white transition-colors flex justify-center items-center cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1">&larr;</button>
-        <div id="slide-indicator" class="flex items-center justify-center font-bold text-lg px-4 border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">1 / 30</div>
+        <div id="slide-indicator" class="flex items-center justify-center font-bold text-lg px-4 border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">1 / 33</div>
         <button id="next-btn" class="w-12 h-12 bg-white border-2 border-black rounded-full font-bold text-xl hover:bg-black hover:text-white transition-colors flex justify-center items-center cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1">&rarr;</button>
     </div>
 
@@ -1266,7 +1383,7 @@
         const slideIndicator = document.getElementById('slide-indicator');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
-        const totalSlides = 30;
+        const totalSlides = 33;
         let currentSlide = 0;
         let isAnimating = false;
 
